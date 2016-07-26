@@ -1,0 +1,1 @@
+web: npm node ./server/index.js
