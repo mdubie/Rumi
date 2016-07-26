@@ -105,6 +105,8 @@ function decorate(app, session) {
     };
   }
 
+  //passing in the socket, don't want it to run right away, need an anonymous function
+
   function getCompleteds(socket) {
     return () => {
       return Completed.findAll({
