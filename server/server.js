@@ -21,9 +21,8 @@ app.use(sessionMiddleware);
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 app.use(auth.routes);
-app.use(express.static(__dirname + '/../dist'));
-// app.use(express.static(__dirname + '/../public'));
-// app.use(auth.isAuth, express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../public'));
+app.use(auth.isAuth, express.static(__dirname + '/../dist'));
 let server = decorate(app, sessionMiddleware);
 
 module.exports = server;
