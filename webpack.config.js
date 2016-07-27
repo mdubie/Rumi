@@ -1,3 +1,5 @@
+let path = require('path')
+
 module.exports = {
   entry: "./client/App.jsx",
   output: {
@@ -16,5 +18,8 @@ module.exports = {
         }
       }
     ]
-  }
+  }, 
+  resolveLoader: {
+    root: path.join(__dirname, 'node_modules'),
+  },
 };
