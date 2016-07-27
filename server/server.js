@@ -6,7 +6,7 @@ let morgan = require('morgan');
 let decorate = require('./alphadeltaninerniner.service');
 let auth = require('./auth');
 
-checkForEnvironmentVariables(['FB_ID', 'FB_SECRET', 'SESSION_SECRET']);
+// checkForEnvironmentVariables(['FB_ID', 'FB_SECRET', 'SESSION_SECRET']);
 
 let sessionMiddleware = session({
   secret: process.env.SESSION_SECRET,
@@ -27,11 +27,11 @@ let server = decorate(app, sessionMiddleware);
 
 module.exports = server;
 
-function checkForEnvironmentVariables(arr) {
-  arr.forEach(v => {
-    if (!process.env[v]) {
-      throw new Error(`environment variable ${v} not defined`);
-    }
-  });
-  console.log('env validated');
-};
+// function checkForEnvironmentVariables(arr) {
+//   arr.forEach(v => {
+//     if (!process.env[v]) {
+//       throw new Error(`environment variable ${v} not defined`);
+//     }
+//   });
+//   console.log('env validated');
+// };
