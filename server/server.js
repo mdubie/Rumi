@@ -13,6 +13,7 @@ let sessionMiddleware = session({
   resave: false,
   saveUninitialized: false
 });
+
 // middleware configuration
 let app = express();
 app.use(morgan('dev'));
