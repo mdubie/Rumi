@@ -1,6 +1,7 @@
 let express = require('express');
 let session = require('express-session');
 let bodyParser = require('body-parser');
+let morgan = require('morgan');
 
 let decorate = require('./alphadeltaninerniner.service');
 let auth = require('./auth');
@@ -14,13 +15,15 @@ let sessionMiddleware = session({
 });
 // middleware configuration
 let app = express();
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(sessionMiddleware);
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 app.use(auth.routes);
-app.use(express.static(__dirname + '/../public'));
-app.use(auth.isAuth, express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../dist'));
+// app.use(express.static(__dirname + '/../public'));
+// app.use(auth.isAuth, express.static(__dirname + '/../dist'));
 let server = decorate(app, sessionMiddleware);
 
 module.exports = server;
@@ -31,4 +34,5 @@ function checkForEnvironmentVariables(arr) {
       throw new Error(`environment variable ${v} not defined`);
     }
   });
+  console.log('env validated');
 };
