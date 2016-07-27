@@ -120,7 +120,7 @@ class App extends React.Component {
                 );
               })}
 
-              {/* Create the recentTask bubbles */}
+              {/* Create the recentTask bubbles */}=
               {this.state.recentTasks.map(recentTask => {
                 return (
                   <div className="col-xs-3" key={recentTask.id}>
