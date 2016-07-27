@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "webpack --watch --progress --colors & nodemon ./server/index.js",
     "start": "node ./server/index.js",
-    "postinstall": "webpack -p --config webpack.config.js"
+    "postinstall": "webpack"
   },
   "author": "",
   "license": "ISC",

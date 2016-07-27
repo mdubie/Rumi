@@ -91,7 +91,6 @@ class App extends React.Component {
               <AddTask/>
             </div>
             <div className="col-xs-12">
-              {/* Create the overdueTask bubbles */}
               {this.state.overdueTasks.map(overdueTask => {
                 return (
                   <div className="col-xs-3">
@@ -106,7 +105,6 @@ class App extends React.Component {
                 );
               })}
 
-              {/* Create the urgentTask bubbles */}
               {this.state.urgentTasks.map(urgentTask => {
                 return (
                   <div className="col-xs-3" key={urgentTask.id}>
@@ -120,7 +118,6 @@ class App extends React.Component {
                 );
               })}
 
-              {/* Create the recentTask bubbles */}=
               {this.state.recentTasks.map(recentTask => {
                 return (
                   <div className="col-xs-3" key={recentTask.id}>
@@ -135,7 +132,7 @@ class App extends React.Component {
               })}
             </div>
           </div>
-          {/* Create the completedTasks cards */}
+
           {this.state.completedTasks.map(completed => {
             return (
               <Comp
